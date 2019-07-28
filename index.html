@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed" rel="stylesheet"> 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,11 +15,12 @@
 
 	* {
 		font-family: 'IBM Plex Sans Condensed', sans-serif;
-		font-size: 18px;
+		font-size: 16px;
 		margin-left: 10px;
+		box-sizing: border-box;
 	}
 
-	p, ul, li {
+	h1, h2, h3, p, ul, li {
 		color: White;
 	}
 
@@ -28,44 +31,55 @@
 	a:visited {
 		color: #c96100;
 	}
+
+	/* Create three equal columns that floats next to each other */
+	.column {
+	float: left;
+	width: 300px;
+	padding: 5px;
+	border: 2px solid slategray;
+	border-radius: 3px;
+	}
+
+	/* Clear floats after the columns */
+	.row:after {
+	content: "";
+	display: table;
+	clear: both;
+	}
 	</style>
 </head>
 
 <body>
-	<p>General links
-		<ul>
-			<li><a href="https://calendar.google.com/calendar/r">Calendar</a></li>
-		</ul>
-	</p>
+	<div class="row">
+		<div class="column">
+			<h3>Common Links</h3>
+			<ul>
+				<li><a href="https://calendar.google.com/calendar/r">Calendar</a></li>
+				<li><a href="https://www.reddit.com/">Reddit</a></li>
+			</ul>
+		</div>
+		<div class="column">
+			<h3>University Links</h3>
+			<ul>
+				<li><a href="https://studentadmin.uconn.edu/">Student Admin</a></li>
+				<li><a href="https://learn.uconn.edu/">HuskyCT</a></li>
+			</ul>
+		</div>
+		<div class="column">
+			<h3>Dota Links</h3>
+			<ul>
+				<li><a href="https://www.dotabuff.com/players/108552597">Dotabuff</a></li>
+				<li><a href="https://www.opendota.com/players/108552597">Opendota</a></li>
+			</ul>
+		</div>
+	</div>
 
-	<p>University links
+	<p>Weather
 		<ul>
-			<li><a href="https://studentadmin.uconn.edu/">Student admin</a></li>
-			<li><a href="https://learn.uconn.edu/">HuskyCT - access class resources</a></li>
-			<li><a href="http://engr.uconn.edu/~song/classes/cn/">CSE 3300 class link</a></li>
-			<li><a href="http://notetaking.csd.uconn.edu/CSE3300.001STORRS/">CSE 3300.001 note uploads for CSD</a></li>
+			<li>Storrs, CT</li>
+			<li>Madison, CT</li>
 		</ul>
-	</p>
-
-	<p>Dota Link
-		<ul>
-			<li><a href="https://www.dotabuff.com/players/108552597">Dotabuff</a></li>
-			<li><a href="https://www.opendota.com/players/108552597">Opendota</a></li>
-		</ul>
-	</p>
-
-	<p>Just some personal stuff:
-		<ul>
-			<li>Tidy up the new tab page so that it has menus and submenus that are able to be accessed with key presses
-				<ul>
-				<li><a href="https://stackoverflow.com/questions/2878983/capture-key-press-without-placing-an-input-element-on-the-page">Capture key presses without placing input element on page</a></li>
-				</ul>
-			</li>
-		</ul>
-	</p>
-
-	<p>
-		<script type='text/javascript' src='https://darksky.net/widget/graph-bar/41.808431,-72.249523/us12/en.js?width=100%&height=400&title=Full Forecast&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true'></script>
 	</p>
 
 	<p>Testing area for JS</p>
@@ -74,9 +88,7 @@
 	<div id="testing" style="display: none">
 		<p>University links
 			<ul>
-				<li><a href="https://learn.uconn.edu/">HuskyCT - access class resources</a></li>
-				<li><a href="http://engr.uconn.edu/~ywu/Courses/CSE3500S18/CSE3500-Spring2018.html">CSE 3500 - homeworks and lectures</a></li>
-				<li><a href="https://github.uconn.edu/iws10001/Mips-Assembly/tree/master/Mips-Assembly">Some help with CSE 3666 labs</a></li>
+				<li>There's not much here.</li>
 			</ul>
 		</p>
 	</div>
