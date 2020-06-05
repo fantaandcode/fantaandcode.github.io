@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>May 25, 2020 - log start</title>
+        <link rel="stylesheet" type="text/css" href="sfstyle.css" title="Skylar"
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed" rel="stylesheet"> 
+    </head>
+
+    <body>
+        <h1>A Package Delivered</h1>
+        <h2>June 7, 2020 - so how do I move?</h2>
+        <h2><a href="../index.html">[go home]</a></h2>
+
+        <p>I've changed the way movement works in the game from a WASD control scheme that did not rely on grid-based movement. I realized that it would be a bit too hard for me to work with, so I've switched over to using a grid-based movement system.</p>
+
+        <p>So what's my methodology behind it?</p>
+
+        <ul>
+            <li>It's simpler</li>
+            <li>Map-making is easier</li>
+        </ul>
+
+        <p>It's far simpler. I'm using a GridMap node for the walls, floors, and pathing items. It's easy to manage and determine which places are walkable. It's great since I can easily separate it all.</p>
+
+        <p>Making maps is also far easier. I've made a very simple wall palette, which is great. I want to be able to make maps a simple process instead of a huge ordeal. The navmeshes would have been annoying to deal with since I do not have experience with it. Perhaps I'm wrong in thinking this way. Combat would also probably be easier.</p>
+
+        <p>I wanted to also evoke the original Fallout games, so I felt that using a new more granular movement system would take away from that. I think that this is the correct way to go.</p>
+
+        <p>If there's anything that could be learned from this conversion, don't, for the love of god, don't try to implement your own a* in native GDScript. I did it, it sort of worked, but good god was it slow. I think it has something to do with the way data is handled.</p>
+
+        <p>Now, my current objective is to work on having containers and an inventory system while also representing items on the ground. Somehow. I've tried to use a GridMap, but it doesn't seem that I can actually have a script attached to the item. Okay. I can work with that. So as of now, it's likely that I'll have to instead use a node for each item that's on the ground. I'll keep looking through it and I'll maybe think of a solution in the end.</p>
+    </body>
+</html>
