@@ -1,0 +1,21 @@
+---
+title: "ESL Berlin Group Stage Biases in Cap's Discord"
+format:
+  html:
+    theme: zephyr
+---
+
+## Output
+
+Oh look at that output there.
+
+```{python}
+import pandas as pd
+import plotly.express as px
+import plotly.io as pio
+
+data = pd.read_parquet('./results/esl_berlin_group_biases.gzip')
+
+fig = px.scatter_3d(data, x='NA_BIAS', y='WEU_BIAS', z='CN_BIAS', color='DISCORD_NAME', template = 'seaborn', width=1000, height=1000)
+fig.show()
+```

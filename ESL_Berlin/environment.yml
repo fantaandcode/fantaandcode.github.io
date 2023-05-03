@@ -1,0 +1,17 @@
+name: data-analysis
+dependencies:
+  - pip
+  - pip:
+    - quarto
+    - matplotlib
+    - seaborn
+    - scikit-learn
+    - ipykernel
+    - plotly
+    - pyarrow
+    - fastparquet
+    - jupyter-kite
+  - numpy
+  - pandas
+  - jupyter
+  - jupyterlab
