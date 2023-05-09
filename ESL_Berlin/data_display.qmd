@@ -1,0 +1,60 @@
+---
+title: "ESL Berlin Group Stage Biases in Cap's Discord"
+author: "Vermilion#1729"
+format:
+  html:
+    grid: 
+      body-width: 1200px
+    navbar: true
+    toc: true
+    toc-depth: 4
+    toc-expand: 4
+    number-sections: true
+    page-layout: full
+    theme: zephyr
+    smooth-scroll: true
+website:
+  image: vaporeon.png
+  navbar: true
+  sidebar: true
+  page-navigation: true
+jupyter: python3
+---
+
+## Prediction Biases of the Members of CapitalistDota's Discord
+### Group Stage
+
+How bias is determined is:
+
+- Team bias
+  - For every game prediction, a 2-0 for a team has that team bias increased by 1
+  - For every game prediction, a 1-1 or tied prediction will increase both team's bias by 0.5
+- Region bias
+  - Take the sum of all the region's team biases
+  - Divide by the number of series predicted
+  - Multiply by the number of teams overall (18)
+  - Divide by the number of teams in the region
+
+To look at your individual biases, double click your Discord name on the legend. It will isolate your name and your name alone.
+
+#### North America, Western Europe, and China
+
+```{python}
+#| echo: false
+import pandas as pd
+import plotly.express as px
+import plotly.io as pio
+
+data = pd.read_parquet('./results/esl_berlin_group_biases.gzip')
+
+fig = px.scatter_3d(data, x='NA_BIAS', y='WEU_BIAS', z='CN_BIAS', color='DISCORD_NAME', template = 'seaborn', height=1000, title = 'ESL Berlin Group Stage Biases for NA, WEU, and China')
+fig.show()
+```
+
+#### Eastern Europe, Southeast Asia, and South America
+
+```{python}
+#| echo: false
+fig = px.scatter_3d(data, x='EEU_BIAS', y='SEA_BIAS', z='SA_BIAS', color='DISCORD_NAME', template = 'seaborn', height=1000, title = 'ESL Berlin Group Stage Biases for EEU, SEA, and SA')
+fig.show()
+```

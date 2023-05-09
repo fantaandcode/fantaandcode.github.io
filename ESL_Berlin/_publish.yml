@@ -1,0 +1,4 @@
+- source: data_display.qmd
+  quarto-pub:
+    - id: 21c22a88-ee88-4f13-9f58-9e2cf0086d64
+      url: 'https://vermilion.quarto.pub/esl-berlin-group-stage-biases-in-caps-discord'
